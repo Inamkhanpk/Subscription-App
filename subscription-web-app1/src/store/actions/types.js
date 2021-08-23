@@ -1,0 +1,8 @@
+export const LOGIN_USER = "LOGIN_USER";
+export const LOGOUT_USER = "LOGOUT_USER"
+export const REGISTER_COMPANY = 'REGISTER_COMPANY'
+export const GET_COMPANIES = 'GET_COMPANIES'
+export const REGISTER_OFFER = 'REGISTER_OFFER'
+export const GET_OFFER = 'GET_OFFER'
+export const ALL_OFFER = 'ALL_OFFER'
+export const REGISTER_USER = "REGISTER_USER"
