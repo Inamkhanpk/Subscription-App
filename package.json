@@ -27,6 +27,6 @@
   },
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix subscriptiom-web-app1 && npm run build --prefix subscription-web-app1"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix subscription-web-app1 && npm run build --prefix subscription-web-app1"
   }
 }
