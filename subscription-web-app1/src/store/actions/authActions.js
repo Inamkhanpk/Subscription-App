@@ -7,7 +7,7 @@ import setAuthToken from "./../../utils/setAuthToken";
 
 export const registerUser = (user) => async (dispatch) => {
  try {
-   const { data } = await axios.post("http://localhost:4000/admin/register",user);
+   const { data } = await axios.post("/admin/register",user);
   
      history.push('/')
      if(data === "Email already exists")
@@ -29,7 +29,7 @@ export const registerUser = (user) => async (dispatch) => {
 
 export const loginUser = (userLogin) => async (dispatch) => {
   try {
-     const { data } = await axios.post("http://localhost:4000/admin/login",  userLogin );
+     const { data } = await axios.post("/admin/login",  userLogin );
      const { token } = data;
         localStorage.setItem("token", token);
         setAuthToken(token);
@@ -46,7 +46,7 @@ export const loginUser = (userLogin) => async (dispatch) => {
   export const Signout = () => async (dispatch) => {
   
     try {
-       const { data } = await axios.get("http://localhost:4000/admin/signout" );
+       const { data } = await axios.get("/admin/signout" );
        setAuthToken(false);
       toastr.info(data.message)
     }

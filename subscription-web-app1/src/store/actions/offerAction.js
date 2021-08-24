@@ -5,7 +5,7 @@ import toastr from 'toastr';
 
 export const regOffer = (offerdetails) => async (dispatch) => {
  try {
-     const { data } = await axios.post("http://localhost:4000/admin/registerOffer", offerdetails );
+     const { data } = await axios.post("/admin/registerOffer", offerdetails );
      
     toastr.success("Successfully Registered Offer")
     dispatch({ type: types.REGISTER_OFFER, payload: data });
@@ -20,7 +20,7 @@ export const regOffer = (offerdetails) => async (dispatch) => {
 
   export const getOffer = () => async (dispatch) => {
     try {
-       const { data } = await axios.get("http://localhost:4000/admin/getoffer" );
+       const { data } = await axios.get("/admin/getoffer" );
       dispatch({ type: types.GET_OFFER, payload: data });
      }
      catch (error) {
@@ -32,7 +32,7 @@ export const regOffer = (offerdetails) => async (dispatch) => {
     export const handlePurchaseOffer = () => async (dispatch) => {
       
       try {
-         const { data } = await axios.get("http://localhost:4000/admin/handlealloffer" );
+         const { data } = await axios.get("/admin/handlealloffer" );
         dispatch({ type: types.ALL_OFFER, payload: data });
        }
        catch (error) {
