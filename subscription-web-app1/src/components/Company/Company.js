@@ -70,10 +70,12 @@ const Company = () =>{
 
   const classes = useStyles();
   const dispatch = useDispatch()
+
   const auth = useSelector((state) => state.auth);
   const company = useSelector((state) => state.company);
   console.log(auth)
- 
+  const [qrCodeText, setQRCodeText] = useState('');
+  const [inputText, setInputText] = useState('');
   const [state, setState] = useState({
     getCompanies:company.getcompanies,
     companyname: '',
@@ -202,7 +204,9 @@ const Company = () =>{
   };
 
 
-
+  const generateQRCode = () => {
+    setQRCodeText(inputText);
+  }
   
 
     return(
@@ -303,6 +307,27 @@ const Company = () =>{
     </div>
   </div>
 
+  <div className="form-group row">
+              <label className="col-sm-4 col-form-label"> QR Code Value</label>
+              <div className="col-sm-8">
+                <input
+                  type="text"
+                  name="qrcode"
+                  className="form-control border-0"
+                  value={inputText}
+                  onChange={e => setInputText(e.target.value)}
+                />
+              </div>
+            </div>
+
+
+            <input type="button" value="Generate" onClick={generateQRCode}/>
+            {qrCodeText ?
+              <QRCode
+                id="qrCodeEl"
+                size={150}
+                value={qrCodeText}
+              /> : null}
 
 
    <div className="d-flex justify-content-end">
