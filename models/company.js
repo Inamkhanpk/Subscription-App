@@ -3,30 +3,22 @@ const {ObjectId} = mongoose.Schema.Types
 const Company = new mongoose.Schema({
   companyname: {
     type: String,
-    
-  },
+    },
   category: {
     type: String,
-    
-  },
+    },
   thumbnail: {
     type: String,
-    
-  },
+    },
   description: {
     type: String,
-    
-  },
+    },
   address1: {
     type: String,
-    
-  },
+    },
   address2: {
     type: String,
-    
-    
   },
-
   email: {
     type: String,
   },

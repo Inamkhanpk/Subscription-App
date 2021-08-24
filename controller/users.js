@@ -112,10 +112,10 @@ exports.registration = async (req, res) => {
               (err, token) => {
   
                 if(token){
-                  res.cookie("token", token, { expiresIn: "1d" });
+                  //res.cookie("token", token, { expiresIn: "1d" });
                 res.json({
                   success: true,
-                  token: "Bearer " + token
+                  token:token
                 });
               }
               else{
