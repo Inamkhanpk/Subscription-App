@@ -71,7 +71,7 @@ exports.getOfferbycompanyid= (req,res)=>{
 exports.getOfferbyCategory= (req,res)=>{
     console.log("companyId",req.params.companyId)
      console.log("category: ", req.params.category);
-     Offer.find({subcategory:req.params.category,companyid:"60e7fc5af2c7ae219437615e"})
+     Offer.find({subcategory:req.params.category,companyid:req.params.companyId})
      .then(offerbycategory=>{
          console.log(offerbycategory)
          res.send(offerbycategory)
