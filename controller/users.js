@@ -73,13 +73,9 @@ exports.registration = async (req, res) => {
 }
  
  exports.signin =  (req, res) => {
- 
-  
-      const { errors, isValid } = validateLoginInput(req.body);
-    
-      
-      if (!isValid) {
-        return res.send(errors);
+   const { errors, isValid } = validateLoginInput(req.body);
+    if (!isValid) {
+     return res.send(errors);
       }
     
       const email = req.body.email;

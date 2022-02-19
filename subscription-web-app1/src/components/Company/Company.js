@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { regCompany} from "./../../store/actions/companyAction";
 import { useDispatch ,useSelector} from 'react-redux'
 import QRCode from 'qrcode.react';
+
 const useStyles = makeStyles((theme) => ({
   inputfield: {
     position: 'relative'
